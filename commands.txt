@@ -1,0 +1,7 @@
+docker-compose build
+
+# Build the Core folder/django app:
+docker-compose run --rm app django-admin startproject core .
+
+# Start up the container:
+docker-compose up
