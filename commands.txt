@@ -1,7 +1,30 @@
-docker-compose build
+# May not need: Replace by "docker-compose run"?
+# docker-compose build
 
 # Build the mysite folder/django app:
 docker-compose run --rm app django-admin startproject mysite .
 
 # Start up the container:
 docker-compose up
+
+
+# ----------------------------------------------------------------------------
+
+# Create the polls app:
+python manage.py startapp polls
+
+# ----------------------------------------------------------------------------
+
+# Make DB migrations:
+python manage.py makemigrations polls
+
+# Apply DB migrations:
+python manage.py migrate
+
+# ----------------------------------------------------------------------------
+
+# Open a shell:
+python manage.py shell
+
+# Create an admin user:
+python manage.py createsuperuser
